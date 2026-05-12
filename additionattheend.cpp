@@ -29,11 +29,26 @@ int main(){
 
     }
 
+    int x=3;
+    int vv=40;
+    node*temp;
+    temp=head;
+    
 
-    node* temp=head;
-    while(temp){
-        cout<<temp->data<<endl;
+     
+    x--;
+    while(x--){
         temp=temp->next;
+    }
+    node*temp2=new node(40);
+    temp2->next=temp->next;
+    temp->next=temp2;
+
+
+    node* temp3=head;
+    while(temp3){
+        cout<<temp3->data<<endl;
+        temp3=temp3->next;
     }
 
 }    
