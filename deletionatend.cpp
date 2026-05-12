@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+class node{
+    public:
+    int data;
+    node*next;
+    node(int value){
+        data=value;
+        next=NULL;
+
+    }
+    };
+
+int main(){
+    node*head,*tail;
+    head=tail=NULL;
+
+    int arr[]={5,7,2,4,8};
+
+    for(int i=0;i<5;i++){
+        if(head==NULL){
+            head=new node(arr[i]);
+            tail=head;
+        }
+        else{
+            tail->next=new node(arr[i]);
+            tail=tail->next;
+        }
+
+    }
+
+    int x=3;
+    int vv=40;
+    node*temp;
+    temp=head;
+    
+
+     
+    x--;
+    while(x--){
+        temp=temp->next;
+    }
+    node*temp2=new node(40);
+    temp2->next=temp->next;
+    temp->next=temp2;
+
+    node*curr,*prev;
+    curr=head;
+    prev=NULL;
+    while(curr->next!=NULL){
+        prev=curr;
+        curr=curr->next;
+}
+    delete curr;
+    prev->next=NULL;
+
+
+    node* temp3=head;
+    while(temp3){
+        cout<<temp3->data<<endl;
+        temp3=temp3->next;
+    }
+
+}    
+
